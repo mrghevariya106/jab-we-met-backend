@@ -14,9 +14,9 @@ app.use(express.json());
 app.use(Cors());
 
 // DB Configure
-mongoose.connect(connection_url, (err) => {
-  if (err) throw err;
-  console.log("connected to MongoDB");
+mongoose.connect(connection_url,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 // API Endpoint
